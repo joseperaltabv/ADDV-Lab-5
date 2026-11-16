@@ -1,5 +1,4 @@
 // ============================================================================
-// Lab 5 - Part 2
 // Constrained-Random MIPS Instruction Generator
 //
 // Supported instructions:
