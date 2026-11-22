@@ -750,16 +750,34 @@ class instruction_generator;
 
 
         // ------------------------------------------------------------
-        // Reload known values before the not-taken branch.
+        // Load two values that are guaranteed to differ before the
+        // not-taken branch.
+        //
+        // Random SW instructions can leave addresses 0x00 and 0x04 holding
+        // the same value, which would turn this branch into a taken one.
+        // Address 0x0C is never written by a random SW, so it still holds
+        // 0xDEADBEEF. $2 = $1 + $1 then differs from $1.
         // ------------------------------------------------------------
 
         append_instruction(
-            make_lw(5'd1, 16'h0000)
+            make_lw(5'd1, 16'h000C)
         );
 
-        append_instruction(
-            make_lw(5'd2, 16'h0004)
-        );
+        filler = new();
+
+        assert(
+            filler.randomize() with {
+                kind == instruction::I_ADD;
+
+                rd == 5'd2;
+                rs == 5'd1;
+                rt == 5'd1;
+            }
+        )
+        else
+            $fatal(1, "Failed to randomize not-taken branch operand");
+
+        append_instruction(filler);
 
 
         // ------------------------------------------------------------

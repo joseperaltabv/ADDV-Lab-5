@@ -31,19 +31,19 @@ Register $0 is used only as a fixed base register for LW and SW instructions so 
 
 ## File Descriptions
 
-### controller.sv
+### controller_lab5.sv
 
 Contains the control logic for the pipelined MIPS processor.
 
-### datapath.sv
+### datapath_lab5.sv
 
 Contains the five-stage pipelined MIPS datapath.
 
-### top.sv
+### top_lab5.sv
 
 Contains the top-level processor module, instruction memory, and data memory.
 
-### instr_gen.sv
+### instr_gen_lab5.sv
 
 Contains the constrained-random instruction generator.
 
@@ -63,7 +63,7 @@ It implements:
 - MIPS machine-code encoding
 - $writememh generation of the instruction program
 
-### testbench.sv
+### testbench_lab5.sv
 
 Contains the Part 2 testbench.
 

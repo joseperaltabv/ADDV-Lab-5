@@ -14,11 +14,11 @@ VCS_FLAGS = -full64 \
             -kdb \
             -lca
 
-SOURCES = design/controller.sv \
-          design/datapath.sv \
-          design/top.sv \
-          tb/instr_gen.sv \
-          tb/testbench.sv
+SOURCES = design/controller_lab5.sv \
+          design/datapath_lab5.sv \
+          design/top_lab5.sv \
+          tb/instr_gen_lab5.sv \
+          tb/testbench_lab5.sv
 
 
 # Default target

@@ -86,6 +86,15 @@ module testbench;
 
 
         // --------------------------------------------------------------------
+        // Wait for the imem module's own time-0 $readmemh of memfile.dat.
+        // Without this delay that load can run after ours and overwrite
+        // word 0 of the generated program.
+        // --------------------------------------------------------------------
+
+        #1;
+
+
+        // --------------------------------------------------------------------
         // Clear instruction memory before loading the generated program.
         // --------------------------------------------------------------------
 
