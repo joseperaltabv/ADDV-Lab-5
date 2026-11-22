@@ -1,0 +1,2 @@
+MIPS-Simulator by viggu3sd, https://github.com/viggu3sd/MIPS-Simulator, commit f601376.
+Used unmodified as the instruction set simulator. See LICENSE.
