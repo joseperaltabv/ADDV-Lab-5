@@ -972,4 +972,4 @@ class instruction_generator;
 
     endfunction
 
-endclass 
+endclass
